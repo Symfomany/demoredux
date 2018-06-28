@@ -7,9 +7,13 @@ class MessagesContainers extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.charger = this.charger.bind(this);
+  }
+  charger() {
+    this.props.getMessages();
   }
   render() {
-    return <Messages messages={this.props.messages} />;
+    return <Messages charger={this.charger} messages={this.props.messages} />;
   }
 }
 
@@ -19,7 +23,9 @@ const mapStateToProps = state => ({
 });
 
 // 2. charger les actions de redux en proriétés
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  getMessages: () => dispatch(getMessagesAction())
+});
 
 export default connect(
   mapStateToProps,
