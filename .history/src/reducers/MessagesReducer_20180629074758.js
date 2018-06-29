@@ -16,8 +16,7 @@ export default (state = initialState, action) => {
     case MESSAGES_LIST:
       return initialState;
     case MESSAGES_REMOVE:
-      const messages = state.messages.filter(elt => elt.id !== action.id);
-      return { messages };
+      return state.filter(elt => elt.id !== action.id);
     default:
       return {
         messages: []

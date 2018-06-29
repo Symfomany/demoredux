@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getMessagesAction, removeAction } from "../actions";
+import { getMessagesAction } from "../actions";
 import Messages from "../components/Messages";
 
 class MessagesContainers extends Component {
@@ -8,23 +8,15 @@ class MessagesContainers extends Component {
     super(props);
     this.state = {};
     this.charger = this.charger.bind(this);
-    this.remove = this.remove.bind(this);
   }
   charger() {
     this.props.getMessages();
   }
-  remove(id) {
-    this.props.removeMessage(id);
-  }
-
   render() {
-    return (
-      <Messages
-        remove={this.remove}
-        charger={this.charger}
-        messages={this.props.messages}
-      />
-    );
+    return <Messages charger={this.charger} messages={this.props.messages} />;
+  }
+  remove() {
+    console.log("okkk");
   }
 }
 
@@ -36,7 +28,7 @@ const mapStateToProps = state => ({
 // 2. charger les actions de redux en proriétés
 const mapDispatchToProps = dispatch => ({
   getMessages: () => dispatch(getMessagesAction()),
-  removeMessage: id => dispatch(removeAction(id))
+  remove: () => dispatch(removeAction())
 });
 
 export default connect(

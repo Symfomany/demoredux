@@ -9,16 +9,9 @@ class Messages extends Component {
     return (
       <div>
         {this.props.messages.length > 0 ? (
-          this.props.messages.map(message => (
-            <p key={message.id}>
-              {message.content}
-              <button onClick={e => this.props.remove(message.id)}>
-                Supprimer
-              </button>
-            </p>
-          ))
+          this.props.messages.map(message => <p>{message.content}</p>)
         ) : (
-          <div>
+          <div key={message.id}>
             <p style={{ color: "red" }}>Aucun Message</p>
             <button onClick={this.props.charger}>Charger les messages</button>
           </div>

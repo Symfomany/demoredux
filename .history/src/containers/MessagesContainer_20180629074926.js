@@ -8,13 +8,12 @@ class MessagesContainers extends Component {
     super(props);
     this.state = {};
     this.charger = this.charger.bind(this);
-    this.remove = this.remove.bind(this);
   }
   charger() {
     this.props.getMessages();
   }
   remove(id) {
-    this.props.removeMessage(id);
+    this.props.remove(id);
   }
 
   render() {
@@ -36,7 +35,7 @@ const mapStateToProps = state => ({
 // 2. charger les actions de redux en proriétés
 const mapDispatchToProps = dispatch => ({
   getMessages: () => dispatch(getMessagesAction()),
-  removeMessage: id => dispatch(removeAction(id))
+  remove: id => dispatch(removeAction(id))
 });
 
 export default connect(

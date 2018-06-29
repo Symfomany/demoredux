@@ -8,7 +8,6 @@ class MessagesContainers extends Component {
     super(props);
     this.state = {};
     this.charger = this.charger.bind(this);
-    this.remove = this.remove.bind(this);
   }
   charger() {
     this.props.getMessages();

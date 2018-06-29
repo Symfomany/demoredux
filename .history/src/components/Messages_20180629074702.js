@@ -12,7 +12,7 @@ class Messages extends Component {
           this.props.messages.map(message => (
             <p key={message.id}>
               {message.content}
-              <button onClick={e => this.props.remove(message.id)}>
+              <button onClick={() => this.props.remove(message.id)}>
                 Supprimer
               </button>
             </p>

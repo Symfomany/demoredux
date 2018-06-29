@@ -10,12 +10,7 @@ class Messages extends Component {
       <div>
         {this.props.messages.length > 0 ? (
           this.props.messages.map(message => (
-            <p key={message.id}>
-              {message.content}
-              <button onClick={e => this.props.remove(message.id)}>
-                Supprimer
-              </button>
-            </p>
+            <p key={message.id}>{message.content}</p>
           ))
         ) : (
           <div>

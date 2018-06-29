@@ -8,9 +8,8 @@ export const getMessagesAction = () => dispatch => {
   });
 };
 
-export const removeAction = id => dispatch => {
+export const removeAction = () => dispatch => {
   return dispatch({
-    type: MESSAGES_REMOVE,
-    id
+    type: MESSAGES_REMOVE
   });
 };

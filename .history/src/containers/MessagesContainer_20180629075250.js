@@ -14,7 +14,7 @@ class MessagesContainers extends Component {
     this.props.getMessages();
   }
   remove(id) {
-    this.props.removeMessage(id);
+    this.props.remove(id);
   }
 
   render() {
