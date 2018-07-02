@@ -4,3 +4,6 @@
 
 // Messages que l'on va lister
 export const MESSAGES_LIST = "MESSAGES_LIST";
+export const MESSAGES_REMOVE = "MESSAGES_REMOVE";
+export const MESSAGES_ADD = "MESSAGES_ADD";
+export const MESSAGES_ENABLE = "MESSAGES_ENABLE";
