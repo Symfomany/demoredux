@@ -4,4 +4,3 @@
 
 // Messages que l'on va lister
 export const MESSAGES_LIST = "MESSAGES_LIST";
-export const MESSAGES_REMOVE = "MESSAGES_REMOVE";
