@@ -1,18 +1,8 @@
-import {
-  MESSAGES_LIST,
-  MESSAGES_REMOVE,
-  MESSAGES_ADD,
-  MESSAGES_ENABLE,
-  MESSAGES_SEARCH
-} from "../constants";
+import { CARD_REMOVE, CARD_ADD } from "../constants";
 
 // State initial pour le Reducers des messagges
 const initialState = {
-  messages: [
-    { id: 1, content: "Mon Premier Message" },
-    { id: 2, content: "Mon Second Message" },
-    { id: 3, content: "Mon Troisième Message" }
-  ]
+  card: []
 };
 
 // Reducer =  State + Action

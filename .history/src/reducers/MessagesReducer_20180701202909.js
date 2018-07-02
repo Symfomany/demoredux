@@ -43,8 +43,6 @@ export default (state = initialState, action) => {
           regex.test(elt.content)
         );
         return { messages: tableauFilter };
-      } else {
-        return { messages: initialState.messages };
       }
 
     case MESSAGES_REMOVE:

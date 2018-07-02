@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Messages from "../components/Messages";
-import AddMessage from "../components/AddMessage";
-import FilterMessage from "../components/FilterMessage";
 import {
-  getMessagesAction,
   removeAction,
   addAction,
   enableAction,
   searchAction
-} from "../actions/MessagesActions";
+} from "../actions";
+import Messages from "../components/Messages";
+import AddMessage from "../components/AddMessage";
+import FilterMessage from "../components/FilterMessage";
+import { getMessagesAction } from "../actions/MessagesActions";
 
 class MessagesContainers extends Component {
   constructor(props) {

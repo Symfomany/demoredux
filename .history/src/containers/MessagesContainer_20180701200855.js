@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Messages from "../components/Messages";
-import AddMessage from "../components/AddMessage";
-import FilterMessage from "../components/FilterMessage";
 import {
   getMessagesAction,
   removeAction,
   addAction,
-  enableAction,
-  searchAction
-} from "../actions/MessagesActions";
+  enableAction
+} from "../actions";
+import Messages from "../components/Messages";
+import AddMessage from "../components/AddMessage";
 
 class MessagesContainers extends Component {
   constructor(props) {
@@ -19,7 +17,6 @@ class MessagesContainers extends Component {
     this.remove = this.remove.bind(this);
     this.add = this.add.bind(this);
     this.enable = this.enable.bind(this);
-    this.search = this.search.bind(this);
   }
   charger() {
     this.props.getMessages();
@@ -33,14 +30,10 @@ class MessagesContainers extends Component {
   enable(id) {
     this.props.enableMessage(id);
   }
-  search(word) {
-    this.props.searchMessage(word);
-  }
 
   render() {
     return (
       <div>
-        <FilterMessage search={this.search} />
         <Messages
           enable={this.enable}
           remove={this.remove}
@@ -63,8 +56,7 @@ const mapDispatchToProps = dispatch => ({
   getMessages: () => dispatch(getMessagesAction()),
   removeMessage: id => dispatch(removeAction(id)),
   enableMessage: id => dispatch(enableAction(id)),
-  addMessage: text => dispatch(addAction(text)),
-  searchMessage: text => dispatch(searchAction(text))
+  addMessage: text => dispatch(addAction(text))
 });
 
 export default connect(

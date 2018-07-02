@@ -1,10 +1,4 @@
-import {
-  MESSAGES_LIST,
-  MESSAGES_REMOVE,
-  MESSAGES_ADD,
-  MESSAGES_ENABLE,
-  MESSAGES_SEARCH
-} from "../constants";
+import { CARD_REMOVE, CARD_ADD } from "../constants";
 
 // State initial pour le Reducers des messagges
 const initialState = {

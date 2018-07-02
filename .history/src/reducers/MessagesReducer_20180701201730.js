@@ -2,8 +2,7 @@ import {
   MESSAGES_LIST,
   MESSAGES_REMOVE,
   MESSAGES_ADD,
-  MESSAGES_ENABLE,
-  MESSAGES_SEARCH
+  MESSAGES_ENABLE
 } from "../constants";
 
 // State initial pour le Reducers des messagges
@@ -32,20 +31,8 @@ export default (state = initialState, action) => {
     case MESSAGES_ENABLE:
       const tab = [...state.messages];
       const index = state.messages.findIndex(elt => elt.id === action.id);
-      tab[index].enabled = true;
+      tab[index].enabled = !tab[index].enabled;
       return { messages: tab };
-
-    case MESSAGES_SEARCH:
-      if (action.texte.length >= 3) {
-        const regex = new RegExp(action.texte, "i");
-
-        const tableauFilter = state.messages.filter(elt =>
-          regex.test(elt.content)
-        );
-        return { messages: tableauFilter };
-      } else {
-        return { messages: initialState.messages };
-      }
 
     case MESSAGES_REMOVE:
       const messages = state.messages.filter(elt => elt.id !== action.id);

@@ -14,9 +14,7 @@ class Messages extends Component {
               style={{ color: message.enabled ? "gold" : "black" }}
               key={message.id}
             >
-              <a onClick={() => this.props.enable(message.id)}>
-                {message.content}
-              </a>
+              {message.content}
               <button onClick={e => this.props.remove(message.id)}>
                 Supprimer
               </button>

@@ -12,7 +12,8 @@ const initialState = {
     { id: 1, content: "Mon Premier Message" },
     { id: 2, content: "Mon Second Message" },
     { id: 3, content: "Mon Troisième Message" }
-  ]
+  ],
+  favoris: []
 };
 
 // Reducer =  State + Action
