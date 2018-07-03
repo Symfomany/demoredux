@@ -15,12 +15,6 @@ class Messages extends Component {
               key={message.id}
             >
               {message.content}
-              <button onClick={() => this.props.remove(message.id)}>
-                Supprimer ce message
-              </button>
-              <button onClick={() => this.props.enable(message.id)}>
-                Activer ce message
-              </button>
             </p>
           ))
         ) : (
